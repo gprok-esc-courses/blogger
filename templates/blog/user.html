@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+<h1>Manage blog</h1>
+    <a href="/blog/add/post/">Add new</a>
+
+    {% for blogpost in blogposts %}
+        <p>
+            <a href="/blogpost/{{ blogpost.slug }}">{{ blogpost.title }}</a>
+        </p>
+    {% endfor %}
+{% endblock %}

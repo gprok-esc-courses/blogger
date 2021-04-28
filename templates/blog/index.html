@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div>
+    {% for blogpost in blogposts %}
+        <p>
+            <a href="/blogpost/{{ blogpost.slug }}">{{ blogpost.title }}</a>
+            <a href="/blog/{{ blogpost.user.username }}">@{{ blogpost.user.username }}</a>
+        </p>
+    {% endfor %}
+</div>
+{% endblock %}
+
